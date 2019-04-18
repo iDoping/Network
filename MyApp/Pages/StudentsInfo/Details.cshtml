@@ -1,0 +1,79 @@
+﻿@page
+@model MyApp.Pages.StudentsInfo.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Подробно</h2>
+
+<div>
+    <h4>Личное дело студента</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <a>Имя:</a>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StudentInfo.Name)
+        </dd>
+        <dt>
+            <a>Фамилия:</a>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StudentInfo.LastName)
+        </dd>
+        <dt>
+            <a>Отчество:</a>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StudentInfo.Patronymic)
+        </dd>
+        <dt>
+            <a>Дата поступления:</a>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StudentInfo.EnterDate)
+        </dd>
+        <dt>
+            <a>Дата рождения:</a>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StudentInfo.BirthDate)
+        </dd>
+        <dt>
+            <a>Номер приказа:</a>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StudentInfo.OrderNumber)
+        </dd>
+        <dt>
+            <a>Группа:</a>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StudentInfo.Group)
+        </dd>
+        <dt>
+            <a>Телефон родителей:</a>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StudentInfo.ParentsNumber)
+        </dd>
+        <dt>
+            <a>Адрес:</a>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StudentInfo.Adress)
+        </dd>
+        <dt>
+            <a>Заметки:</a>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StudentInfo.Notes)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.StudentInfo.ID">Изменить</a> |
+    <a asp-page="./Index">Назад</a>
+</div>

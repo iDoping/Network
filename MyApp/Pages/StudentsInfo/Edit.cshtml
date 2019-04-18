@@ -1,0 +1,80 @@
+﻿@page
+@model MyApp.Pages.StudentsInfo.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Изменить</h2>
+
+<h4>Личное дело студента</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="StudentInfo.ID" />
+            <div class="form-group">
+                <label asp-for="StudentInfo.Name" class="control-label"><p>Имя</p></label>
+                <input asp-for="StudentInfo.Name" class="form-control" />
+                <span asp-validation-for="StudentInfo.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentInfo.LastName" class="control-label"><p>Фамилия</p></label>
+                <input asp-for="StudentInfo.LastName" class="form-control" />
+                <span asp-validation-for="StudentInfo.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentInfo.Patronymic" class="control-label"><p>Отчество</p></label>
+                <input asp-for="StudentInfo.Patronymic" class="form-control" />
+                <span asp-validation-for="StudentInfo.Patronymic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentInfo.EnterDate" class="control-label"><p>Дата поступления</p></label>
+                <input asp-for="StudentInfo.EnterDate" class="form-control" />
+                <span asp-validation-for="StudentInfo.EnterDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentInfo.BirthDate" class="control-label"><p>Дата рождения</p></label>
+                <input asp-for="StudentInfo.BirthDate" class="form-control" />
+                <span asp-validation-for="StudentInfo.BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentInfo.OrderNumber" class="control-label"><p>Номер приказа</p></label>
+                <input asp-for="StudentInfo.OrderNumber" class="form-control" />
+                <span asp-validation-for="StudentInfo.OrderNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentInfo.Group" class="control-label"><p>Группа</p></label>
+                <input asp-for="StudentInfo.Group" class="form-control" />
+                <span asp-validation-for="StudentInfo.Group" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentInfo.ParentsNumber" class="control-label"><p>Телефон родителей</p></label>
+                <input asp-for="StudentInfo.ParentsNumber" class="form-control" />
+                <span asp-validation-for="StudentInfo.ParentsNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentInfo.Adress" class="control-label"><p>Адрес</p></label>
+                <input asp-for="StudentInfo.Adress" class="form-control" />
+                <span asp-validation-for="StudentInfo.Adress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentInfo.Notes" class="control-label"><p>Заметки</p></label>
+                <input asp-for="StudentInfo.Notes" class="form-control" />
+                <span asp-validation-for="StudentInfo.Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

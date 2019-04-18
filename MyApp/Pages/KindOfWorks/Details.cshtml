@@ -1,0 +1,25 @@
+﻿@page
+@model MyApp.Pages.KindOfWorks.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Подробно</h2>
+
+<div>
+    <h4>Вид работы</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <p>Название работы: </p>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.KindOfWork.NameOfWork)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.KindOfWork.ID">Изменить</a> |
+    <a asp-page="./Index">Назад</a>
+</div>

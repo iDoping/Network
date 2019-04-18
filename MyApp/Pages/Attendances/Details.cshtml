@@ -1,0 +1,43 @@
+﻿@page
+@model MyApp.Pages.Attendances.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Подробно</h2>
+
+<div>
+    <h4>Посещаемость</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <p>Дата:</p>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Attendance.Data)
+        </dd>
+        <dt>
+            <p>Пара:</p>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Attendance.Lesson)
+        </dd>
+        <dt>
+            <p>Флаг присутствия:</p>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Attendance.Presense)
+        </dd>
+        <dt>
+            <p>Время опозания:</p>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Attendance.TimeOfDelay)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Attendance.ID">Изменить</a> |
+    <a asp-page="./Index">Назад</a>
+</div>

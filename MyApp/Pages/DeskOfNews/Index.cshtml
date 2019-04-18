@@ -1,0 +1,42 @@
+﻿@page
+@model MyApp.Pages.DeskOfNews.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Объявления</h2>
+
+<p>
+    <a asp-page="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <p>Заголовок</p>
+            </th>
+            <th>
+                <p>Содержание</p>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.DeskOfNew) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HeaderOfNews)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TextOfNews)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробно</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

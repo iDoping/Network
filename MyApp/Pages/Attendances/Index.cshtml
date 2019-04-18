@@ -1,0 +1,54 @@
+﻿@page
+@model MyApp.Pages.Attendances.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Посещаемость</h2>
+
+<p>
+    <a asp-page="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <p>Дата</p>
+            </th>
+            <th>
+                <p>Пара</p>
+            </th>
+            <th>
+                <p>Флаг присутствия</p>
+            </th>
+            <th>
+                <p>Время опоздания</p>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Attendance) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lesson)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Presense)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeOfDelay)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробно</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

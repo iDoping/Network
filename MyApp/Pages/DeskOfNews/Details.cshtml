@@ -1,0 +1,31 @@
+﻿@page
+@model MyApp.Pages.DeskOfNews.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Подробно</h2>
+
+<div>
+    <h4>Объявления</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <p>Заголовок:</p>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DeskOfNew.HeaderOfNews)
+        </dd>
+        <dt>
+            <p>Содержание:</p>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DeskOfNew.TextOfNews)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.DeskOfNew.ID">Изменить</a> |
+    <a asp-page="./Index">Назад</a>
+</div>

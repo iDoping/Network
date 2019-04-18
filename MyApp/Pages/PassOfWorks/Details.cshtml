@@ -1,0 +1,43 @@
+﻿@page
+@model MyApp.Pages.PassOfWorks.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Подробности</h2>
+
+<div>
+    <h4>Сдача работ</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <p>Дата сдачи:</p>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PassOfWork.ReleaseDate)
+        </dd>
+        <dt>
+            <p>Тип работы:</p>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PassOfWork.TypeOfWork)
+        </dd>
+        <dt>
+            <p>Номер работы:</p>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PassOfWork.NumberOfWork)
+        </dd>
+        <dt>
+            <p>Название дисциплины:</p>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PassOfWork.CallOfDiscipline)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.PassOfWork.ID">Изменить</a> |
+    <a asp-page="./Index">Назад</a>
+</div>

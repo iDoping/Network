@@ -1,0 +1,49 @@
+﻿@page
+@model MyApp.Pages.DisciplineInformations.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Подробно</h2>
+
+<div>
+    <h4>Информация об учебных дисциплинах</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <p>Специальность:</p>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DisciplineInformation.Speciality)
+        </dd>
+        <dt>
+            <p>Дисциплина:</p>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DisciplineInformation.Discipline)
+        </dd>
+        <dt>
+            <p>ЛК:</p>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DisciplineInformation.AmountOfLections)
+        </dd>
+        <dt>
+            <p>ЛБ:</p>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DisciplineInformation.AmountOfLabs)
+        </dd>
+        <dt>
+            <p>ПР:</p>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DisciplineInformation.AmountOfPractics)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.DisciplineInformation.ID">Изменить</a> |
+    <a asp-page="./Index">Назад</a>
+</div>

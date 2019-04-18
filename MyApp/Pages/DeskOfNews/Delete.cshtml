@@ -1,0 +1,34 @@
+﻿@page
+@model MyApp.Pages.DeskOfNews.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Удалить</h2>
+
+<h3>Вы точно хотите удалить этот элемент?</h3>
+<div>
+    <h4>Объявления</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <p>Заголовок:</p>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DeskOfNew.HeaderOfNews)
+        </dd>
+        <dt>
+            <p>Содержание:</p>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DeskOfNew.TextOfNews)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="DeskOfNew.ID" />
+        <input type="submit" value="Удалить" class="btn btn-default" /> |
+        <a asp-page="./Index">Назад</a>
+    </form>
+</div>

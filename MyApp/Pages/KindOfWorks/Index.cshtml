@@ -1,0 +1,36 @@
+﻿@page
+@model MyApp.Pages.KindOfWorks.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Виды работ</h2>
+
+<p>
+    <a asp-page="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <p>Название работы</p>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.KindOfWork) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameOfWork)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробно</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

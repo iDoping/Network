@@ -1,0 +1,49 @@
+﻿@page
+@model MyApp.Pages.Attendances.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Создать</h2>
+
+<h4>Посещаемость</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Attendance.Data" class="control-label"><p>Дата</p></label>
+                <input asp-for="Attendance.Data" class="form-control" />
+                <span asp-validation-for="Attendance.Data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Attendance.Lesson" class="control-label"><p>Пара</p></label>
+                <input asp-for="Attendance.Lesson" class="form-control" />
+                <span asp-validation-for="Attendance.Lesson" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Attendance.Presense" class="control-label"><p>Флаг присутствия</p></label>
+                <input asp-for="Attendance.Presense" class="form-control" />
+                <span asp-validation-for="Attendance.Presense" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Attendance.TimeOfDelay" class="control-label"><p>Время опоздания</p></label>
+                <input asp-for="Attendance.TimeOfDelay" class="form-control" />
+                <span asp-validation-for="Attendance.TimeOfDelay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

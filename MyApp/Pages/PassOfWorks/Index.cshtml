@@ -1,0 +1,54 @@
+﻿@page
+@model MyApp.Pages.PassOfWorks.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Сдача работ</h2>
+
+<p>
+    <a asp-page="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <p>Дата сдачи</p>
+            </th>
+            <th>
+                <p>Тип работы</p>
+            </th>
+            <th>
+                <p>Номер работы</p>
+            </th>
+            <th>
+                <p>Название дисциплины</p>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.PassOfWork) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReleaseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeOfWork)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfWork)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CallOfDiscipline)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробно</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

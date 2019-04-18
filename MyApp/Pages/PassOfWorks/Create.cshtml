@@ -1,0 +1,49 @@
+﻿@page
+@model MyApp.Pages.PassOfWorks.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Создать</h2>
+
+<h4>Сдача работ</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PassOfWork.ReleaseDate" class="control-label"><p>Дата сдачи</p></label>
+                <input asp-for="PassOfWork.ReleaseDate" class="form-control" />
+                <span asp-validation-for="PassOfWork.ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassOfWork.TypeOfWork" class="control-label"><p>Тип работы</p></label>
+                <input asp-for="PassOfWork.TypeOfWork" class="form-control" />
+                <span asp-validation-for="PassOfWork.TypeOfWork" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassOfWork.NumberOfWork" class="control-label"><p>Номер работы</p></label>
+                <input asp-for="PassOfWork.NumberOfWork" class="form-control" />
+                <span asp-validation-for="PassOfWork.NumberOfWork" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassOfWork.CallOfDiscipline" class="control-label"><p>Название дисциплины</p></label>
+                <input asp-for="PassOfWork.CallOfDiscipline" class="form-control" />
+                <span asp-validation-for="PassOfWork.CallOfDiscipline" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

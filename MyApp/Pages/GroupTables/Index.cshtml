@@ -1,0 +1,42 @@
+﻿@page
+@model MyApp.Pages.GroupTables.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Группы</h2>
+
+<p>
+    <a asp-page="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               <p>Название группы</p>
+            </th>
+            <th>
+                <p>Специальность</p>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.GroupTable) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameOfGroup)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Speciality)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробно</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

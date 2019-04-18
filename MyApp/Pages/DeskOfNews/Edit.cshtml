@@ -1,0 +1,40 @@
+﻿@page
+@model MyApp.Pages.DeskOfNews.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Изменить</h2>
+
+<h4>Объявления</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DeskOfNew.ID" />
+            <div class="form-group">
+                <label asp-for="DeskOfNew.HeaderOfNews" class="control-label"><p>Заголовок</p></label>
+                <input asp-for="DeskOfNew.HeaderOfNews" class="form-control" />
+                <span asp-validation-for="DeskOfNew.HeaderOfNews" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskOfNew.TextOfNews" class="control-label"><p>Содержание</p></label>
+                <input asp-for="DeskOfNew.TextOfNews" class="form-control" />
+                <span asp-validation-for="DeskOfNew.TextOfNews" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,31 @@
+﻿@page
+@model MyApp.Pages.GroupTables.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Подробно</h2>
+
+<div>
+    <h4>Группы</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <p>Название группы:</p>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GroupTable.NameOfGroup)
+        </dd>
+        <dt>
+            <p>Специальность:</p>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GroupTable.Speciality)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.GroupTable.ID">Изменить</a> |
+    <a asp-page="./Index">Удалить</a>
+</div>
