@@ -11,6 +11,6 @@ namespace MyApp.Models
         public string Lesson { get; set; }
         public int Presense { get; set; }
         [DataType(DataType.Time)]
-        public DateTime TimeOfDelay { get; set; }
+        public DateTime TimeOfDelay { get; set; }//
     }
 }
